@@ -8,6 +8,7 @@ public class SillaTest {
     @Test
     public void getImporteCompraTest() {
         Silla silla = new Silla("Silla De Comer Bebe Verde", 10);
+        silla.setPrecioAndObsequio();
         double actualAmount = silla.getImporteCompra();
         double expectedAmount = 1425d;
 
@@ -17,6 +18,7 @@ public class SillaTest {
     @Test
     public void getImporteDescuentoTest() {
         Silla silla = new Silla("Silla De Comer Bebe Verde", 10);
+        silla.setPrecioAndObsequio();
         double actualAmount = silla.getImporteDescueto();
         double expectedAmount = 142.5 * 10 * 0.085;
 
@@ -26,6 +28,7 @@ public class SillaTest {
     @Test
     public void getImportePagarTest() {
         Silla silla = new Silla("Silla De Comer Bebe Verde", 10);
+        silla.setPrecioAndObsequio();
         double actualAmount = silla.getImportePagar();
         double expectedAmount = 1303.875d;
 
