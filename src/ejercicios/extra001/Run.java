@@ -1,5 +1,11 @@
 package ejercicios.extra001;
 
+import java.io.InputStream;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  * Una tienda mayorista, ha puesto en oferta la venta de sillas de comer para bebes, a los precios
  * dados en la siguiente tabla
@@ -38,14 +44,20 @@ public class Run {
     public static void main(String[] args) {
         Tienda tienda = new Tienda();
 
-        tienda.addSilla(new Silla("Silla De Comer Bebe Verde", 142.5, 1));
-        tienda.addSilla(new Silla("Silla De Comer DOMCA - EB619", 245.8, 10));
-        tienda.addSilla(new Silla("Silla De Comer Ezra Deluxe # Ev630", 399.5, 20));
+        Scanner scanner = new Scanner(System.in);
 
-        tienda.addSilla(new Silla("Silla De Comer Bebe Verde", 142.5, 10));
-        tienda.addSilla(new Silla("Silla De Comer DOMCA - EB619", 245.8, 5));
-        tienda.addSilla(new Silla("Silla De Comer Ezra Deluxe # Ev630", 399.5, 50));
+        // solicitando 5 cantidades distintas para los tres modelos
 
+        List<String> modelos = new ArrayList<>();
+        modelos.add("Silla De Comer Bebe Verde");
+        modelos.add("Silla De Comer DOMCA - EB619");
+        modelos.add("Silla De Comer Ezra Deluxe # Ev630");
+
+        for(String modelo : modelos) {
+            System.out.println("Ingrese la cantidad para el modelo: " + modelo);
+            int cantidad = scanner.nextInt();
+            tienda.addSilla(new Silla(modelo, cantidad));
+        }
         tienda.printSillas();
     }
 }

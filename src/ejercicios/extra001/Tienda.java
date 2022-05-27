@@ -14,9 +14,10 @@ public class Tienda {
         sillas.add(silla);
     }
 
-    public void printSillas(){
+    public void printSillas() {
         for(Silla silla : sillas) {
-            System.out.println(silla);
+            if (silla.getCantidad() > 0)
+                System.out.println(silla);
         }
     }
 }

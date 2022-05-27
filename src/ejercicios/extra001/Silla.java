@@ -2,53 +2,32 @@ package ejercicios.extra001;
 
 public class Silla {
     private String modelo;
-    private double precio;
     private double cantidad;
+    private double precio;
+    private String obsequio;
 
-    public Silla(String modelo, double precio, double cantidad) {
+    public Silla(String modelo, double cantidad) {
         this.modelo = modelo;
-        this.precio = precio;
         this.cantidad = cantidad;
     }
 
-    public String getModelo() {
-        return modelo;
-    }
+    public double getCantidad() { return cantidad; }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
-
-    public double getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(double cantidad) {
-        this.cantidad = cantidad;
-    }
-
-    public String getObsequio() {
-        String obsequio = "Ninguno";
+    public void setPrecioAndObsequio() {
         switch (modelo) {
             case "Silla De Comer Bebe Verde":
+                precio = 142.5;
                 obsequio = "Pañalera";
                 break;
             case "Silla De Comer DOMCA - EB619":
+                precio = 245.8;
                 obsequio = "Juego didáctico";
                 break;
             case "Silla De Comer Ezra Deluxe # Ev630":
+                precio = 399.5;
                 obsequio = "Rompecabezas";
                 break;
         }
-        return obsequio;
     }
 
     public double getImporteCompra() {
@@ -70,6 +49,7 @@ public class Silla {
 
     @Override
     public String toString() {
+        setPrecioAndObsequio();
         return "Silla{" +
                 "modelo='" + modelo + '\'' +
                 ", precio=" + precio +
@@ -77,7 +57,7 @@ public class Silla {
                 ", importeCompra=" + getImporteCompra() +
                 ", importeDescuento=" + getImporteDescueto() +
                 ", importePagar=" + getImportePagar() +
-                ", obsequio='" + getObsequio() + '\'' +
+                ", obsequio='" + obsequio + '\'' +
                 '}';
     }
 }
